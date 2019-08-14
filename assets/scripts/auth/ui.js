@@ -11,6 +11,7 @@ const signUpSuccess = function () {
   // $('#message').className('success') // better?
   $('#message').addClass('success') // optional: adds css class for styling
   console.log('singUpSuccess ran')
+  $('#sign-up').hide()
 }
 
 const signUpFailure = function () {
@@ -33,8 +34,13 @@ const signInSuccess = function (data) {
   $('#message').removeClass()
   // $('#message').className('success') // better?
   $('#message').addClass('success') // optional: adds css class for styling
-  console.log('Successful sign in! User is', store.user)
-  $('#signed-in-user').text(store.user.email)
+  console.log('Successful sign in! User is ', store.user)
+  $('#signed-in-user').text('User ' + store.user.email + ' is signed in!')
+  $('#change-password').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#hide').css('display', 'block')
 }
 
 const signInFailure = function () {
@@ -66,6 +72,11 @@ const signOutSuccess = function () {
   $('#message').removeClass()
   // $('#message').className('success') // better?
   $('#message').addClass('success') // optional: adds css class for styling
+  $('form').trigger('reset')
+  $('#change-password').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#sign-out').hide()
   console.log('Signed out successfully')
 }
 

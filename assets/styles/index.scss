@@ -1,1 +1,44 @@
 @import '~bootstrap/scss/bootstrap';
+
+$black: #000;
+
+body {
+  display: grid;
+}
+
+.border {
+  border: 3px solid $black;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.failure {
+  border: 3px solid red;
+}
+
+fieldset {
+  text-align: center;
+}
+
+#hide {
+  display: none;
+}
+
+.row {
+  display: flex;
+  height: 30em;
+  text-align: center;
+  width: 30em;
+}
+
+.status-messages {
+  text-align: center;
+}
+
+.success {
+  border: 3px solid green;
+}

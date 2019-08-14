@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,7 +12,12 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Welcome to Tic Tac Toe!!!</h1>
+        <div class='status-messages'>
+          <div id="signed-in-user"></div>
+          <div id="signed-out-user"></div>
+          <div id="message"></div>
+        </div>
 
       <form id='sign-up' class='border'>
         <fieldset>
@@ -44,7 +49,22 @@
           <legend>Sign out!</legend>
           <input type="submit"  value="Sign out!">
         </fieldset>
-
       </form>
+      <div id="hide">
+        <div class="container">
+            <h1>Game Board</h1>
+                <div class="row">
+                    <div class="col-4 box">1</div>
+                    <div class="col-4 box">2</div>
+                    <div class="col-4 box">3</div>
+                    <div class="col-4 box">4</div>
+                    <div class="col-4 box">5</div>
+                    <div class="col-4 box">6</div>
+                    <div class="col-4 box">7</div>
+                    <div class="col-4 box">8</div>
+                    <div class="col-4 box">9</div>
+                  </div>
+              </div>
+            </div>
     </body>
 </html>
