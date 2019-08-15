@@ -1,19 +1,27 @@
 'use strict'
 const store = require('../../assets/scripts/store')
 
-store.player = 'x'
+store.player = 'X'
 
 console.log(store.player)
 
 const switchPlayer = function () {
-  if (store.player === 'x') {
-    store.player = 'o'
+  if (store.player === 'X') {
+    store.player = 'O'
   } else {
-    store.player = 'x'
+    store.player = 'X'
   }
   console.log(store.player)
 }
 
+const clearBoard = function () {
+  if (!store.target === '') {
+    store.target = ''
+  }
+  console.log('empty?')
+}
+
 module.exports = {
-  switchPlayer
+  switchPlayer,
+  clearBoard
 }

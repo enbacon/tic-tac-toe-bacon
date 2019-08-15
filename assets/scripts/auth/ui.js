@@ -31,6 +31,7 @@ const signInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#new-game').show()
   $('#sign-out').show()
   $('#hide').css('display', 'block')
 }
@@ -69,6 +70,7 @@ const signOutSuccess = function () {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
+  $('.container').hide()
   console.log('Signed out successfully')
 }
 
@@ -76,33 +78,6 @@ const signOutFailure = function () {
   $('#message').text('Sign out was not successful.')
   $('#message').addClass('failure') // optional: adds css class for styling
   console.log('signOutFailure ran')
-}
-
-const turnNotify = function () {
-  $('#message').text('Player ' + store.player + ', it is your turn!')
-  console.log('turnNotify ran')
-}
-
-const newGameSuccess = function () {
-  $('#message').text('You have started a new game!')
-  $('#message').addClass('success')
-  console.log('newGame started!')
-}
-
-const newGameFailure = function () {
-  $('#message').text('You have started a new game!')
-  $('#message').addClass('failure')
-  console.log('newGame not started')
-}
-
-const validMove = function () {
-  $('#message').text('Great move!')
-  console.log('validMove ran succesfully!')
-}
-
-const invalidMove = function () {
-  $('#message').text('Sorry, that is not a valid move. Please pick an empty spot!')
-  console.log('invalidMove made')
 }
 
 module.exports = {
@@ -113,10 +88,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure,
-  newGameSuccess,
-  newGameFailure,
-  turnNotify,
-  validMove,
-  invalidMove
+  signOutFailure
 }

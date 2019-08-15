@@ -40,15 +40,6 @@ const signOut = function () {
   })
 }
 
-const newGame = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
 // const onClick = function {
 //   return $.ajax({
 //   //url: config.apiUrl
@@ -59,7 +50,6 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut,
-  newGame
+  signOut
 //  onClick
 }
