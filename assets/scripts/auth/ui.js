@@ -1,9 +1,8 @@
 'use strict'
 const store = require('./../store')
+// const play = require('./../game/playing')
 
 // does this need anything passed in?/ as a parameter
-// TODO this onlyl works for signIn to store the Token
-// need to think about signUp, etc...  (if I have refactored my code so the below is only 1 success function)
 const signUpSuccess = function () {
   // store.token = data.user.token
   $('#message').text('Signed up successfully!')
@@ -21,13 +20,6 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  // handle storing user token, if it exits
-  // data looks like
-  // {"user":{"id":109,"email":"bob@gmail.com","token":"BAhJIiVlNWM4NjM3YjMxYzE2Mjc3MDBhMTM2OWQ2YjhhNTdmZAY6BkVG--3519ca18cb78a9b82d5f6e7ffb08f5f06555aafe"}}
-
-  // if wanted to store email
-  // store.email = data.user.email
-  // right below is how we are storing the user's token
   // store.user.token is how you get the user out of here
   store.user = data.user
   $('#message').text('Signed in successfully!')
@@ -86,6 +78,33 @@ const signOutFailure = function () {
   console.log('signOutFailure ran')
 }
 
+const turnNotify = function () {
+  $('#message').text('Player ' + store.player + ', it is your turn!')
+  console.log('turnNotify ran')
+}
+
+const newGameSuccess = function () {
+  $('#message').text('You have started a new game!')
+  $('#message').addClass('success')
+  console.log('newGame started!')
+}
+
+const newGameFailure = function () {
+  $('#message').text('You have started a new game!')
+  $('#message').addClass('failure')
+  console.log('newGame not started')
+}
+
+const validMove = function () {
+  $('#message').text('Great move!')
+  console.log('validMove ran succesfully!')
+}
+
+const invalidMove = function () {
+  $('#message').text('Sorry, that is not a valid move. Please pick an empty spot!')
+  console.log('invalidMove made')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -94,5 +113,10 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  newGameSuccess,
+  newGameFailure,
+  turnNotify,
+  validMove,
+  invalidMove
 }

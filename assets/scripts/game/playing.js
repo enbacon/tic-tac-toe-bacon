@@ -15,4 +15,5 @@ const switchPlayer = function () {
 }
 
 module.exports = {
+  switchPlayer
 }
