@@ -33,6 +33,7 @@ const signInSuccess = function (data) {
   $('#sign-in').hide()
   $('#new-game').show()
   $('#sign-out').show()
+  $('#numGames').show()
   $('#hide').css('display', 'block')
 }
 

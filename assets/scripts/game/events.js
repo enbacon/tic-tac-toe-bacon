@@ -29,17 +29,21 @@ const switchPlayer = function () {
   }
 }
 
-const checkForWin = function () {
-  const gameBoard = store.game.cells
-  let count = 0
+// store.gameboard = store.game.cells
 
-  gameBoard.forEach(move => {
-    if (!move === '') {
-      count++
-    }
-  })
-  return count
-}
+// const wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [0, 4, 8], [2, 4, 6]]
+//
+// const checkForWin = function () {
+//   let winStatus = false
+//   for (let i = 0; i < store.games.cells.length; i++) {
+//     if ((store.games.cells[0] === store.games.cells[1]) && (store.games.cells[0] === store.games.cells[2])) {
+//       winStatus = true
+//       return winStatus
+//     }
+//   }
+// }
+
+// console.log('store.game.games.cells is', store.game.games.cells)
 
 const onGameUpdate = function (event) {
   event.preventDefault()
@@ -51,7 +55,7 @@ const onGameUpdate = function (event) {
   if (!boxText) {
     $(event.target).text(store.player)
     store.game.cells[store.tile] = store.player
-    checkForWin()
+    // checkForWin()
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
@@ -63,8 +67,18 @@ const onGameUpdate = function (event) {
   console.log(store.game.id)
 }
 
+const onSeeAllGames = function (event) {
+  event.preventDefault()
+  $('#gamesMessage').show()
+  api.seeAllGames()
+    .then(ui.onSeeAllGamesSuccess)
+    .catch(ui.onSeeAllGamesFailure)
+}
+
 module.exports = {
   onGameUpdate,
-  onNewGame
-  // checkWin
+  onNewGame,
+  onSeeAllGames
+  // checkForThree
+  // checkForWin
 }

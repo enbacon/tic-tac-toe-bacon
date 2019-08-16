@@ -32,7 +32,29 @@ const gameUpdate = function (data) {
   })
 }
 
+const getAGame = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const seeAllGames = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGame,
-  gameUpdate
+  gameUpdate,
+  seeAllGames,
+  getAGame
 }
