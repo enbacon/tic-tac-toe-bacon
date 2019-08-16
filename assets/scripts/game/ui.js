@@ -20,7 +20,8 @@ const newGameFailure = function () {
   console.log('newGame not started')
 }
 
-const onGameUpdateSuccess = function () {
+const onGameUpdateSuccess = function (data) {
+  store.game = data.game
   $('#message').text('Player ' + store.player + ' it is now your turn!')
   $('#message').addClass('success')
   console.log('validMove ran succesfully!')

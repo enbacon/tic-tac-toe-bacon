@@ -18,12 +18,22 @@ body {
 
 .container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-board {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 h1 {
   text-align: center;
+}
+
+.fail {
+  border: 3px solid red;
 }
 
 .failure {
@@ -50,4 +60,10 @@ fieldset {
 
 .success {
   border: 3px solid green;
+}
+
+.tiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

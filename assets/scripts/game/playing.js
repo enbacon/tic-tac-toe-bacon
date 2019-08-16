@@ -2,6 +2,7 @@
 const store = require('../../assets/scripts/store')
 
 store.player = 'X'
+console.log(store.game.cells)
 
 console.log(store.player)
 

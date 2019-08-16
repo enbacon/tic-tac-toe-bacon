@@ -27,7 +27,18 @@ const switchPlayer = function () {
   } else {
     store.player = 'X'
   }
-  console.log(store.player)
+}
+
+const checkForWin = function () {
+  const gameBoard = store.game.cells
+  let count = 0
+
+  gameBoard.forEach(move => {
+    if (!move === '') {
+      count++
+    }
+  })
+  return count
 }
 
 const onGameUpdate = function (event) {
@@ -39,20 +50,21 @@ const onGameUpdate = function (event) {
   // if (!boxText){
   if (!boxText) {
     $(event.target).text(store.player)
-    switchPlayer()
-    console.log(event)
+    store.game.cells[store.tile] = store.player
+    checkForWin()
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
+    console.log(store.player)
+    switchPlayer()
   } else {
     $('#message').text('Sorry, that is not a valid move!')
   }
-  console.log(store.player)
   console.log(store.game.id)
 }
-// }
 
 module.exports = {
   onGameUpdate,
   onNewGame
+  // checkWin
 }
