@@ -1,6 +1,6 @@
-curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
+curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --include \
-  --request POST \
+  --request GET \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
 

@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const logic = require('./logic')
 
 const turnNotify = function () {
   $('#message').text('Player ' + store.player + ', it is your turn!')
@@ -23,9 +24,13 @@ const newGameFailure = function () {
 }
 
 const onGameUpdateSuccess = function (data) {
-  // store.gameBoard provides the current ARRAY for the game
-  store.gameBoard = data.game.cells
-  console.log(store.gameBoard)
+  // store.game.cells provides the current ARRAY for the game
+  // store.game.cells = data.game.cells
+  store.game.over = logic.checkForWin()
+  console.log(store.game.cells)
+  if (store.game.over === true) {
+    $('#message').text('Congratulations ' + store.player + ' you have won!!!')
+  }
   $('#message').text('Player ' + store.player + ' it is now your turn!')
   $('#message').addClass('success')
 }

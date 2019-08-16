@@ -33,16 +33,14 @@ const switchPlayer = function () {
 
 // const wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [0, 4, 8], [2, 4, 6]]
 //
-// const checkForWin = function () {
-//   let winStatus = false
-//   for (let i = 0; i < store.games.cells.length; i++) {
-//     if ((store.games.cells[0] === store.games.cells[1]) && (store.games.cells[0] === store.games.cells[2])) {
-//       winStatus = true
-//       return winStatus
-//     }
-//   }
-// }
+// store.gameBoard provides the current ARRAY for the game
+//
 
+// for (let i = 0; i < store.gameboard.length; i++) {
+//   if (store.gameboard[i] === '') {
+//     return winStatus
+//
+//
 // console.log('store.game.games.cells is', store.game.games.cells)
 
 const onGameUpdate = function (event) {
@@ -55,7 +53,6 @@ const onGameUpdate = function (event) {
   if (!boxText) {
     $(event.target).text(store.player)
     store.game.cells[store.tile] = store.player
-    // checkForWin()
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
@@ -79,6 +76,4 @@ module.exports = {
   onGameUpdate,
   onNewGame,
   onSeeAllGames
-  // checkForThree
-  // checkForWin
 }

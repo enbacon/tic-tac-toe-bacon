@@ -11,6 +11,7 @@ const signUpSuccess = function () {
   $('#message').addClass('success') // optional: adds css class for styling
   console.log('singUpSuccess ran')
   $('#sign-up').hide()
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function () {
@@ -35,6 +36,7 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   $('#numGames').show()
   $('#hide').css('display', 'block')
+  $('form').trigger('reset')
 }
 
 const signInFailure = function () {
@@ -47,6 +49,7 @@ const changePasswordSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success') // optional: adds css class for styling
   console.log('changePasswordSuccess ran')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
@@ -66,13 +69,13 @@ const signOutSuccess = function () {
   $('#message').removeClass()
   // $('#message').className('success') // better?
   $('#message').addClass('success') // optional: adds css class for styling
-  $('form').trigger('reset')
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
   $('.container').hide()
   console.log('Signed out successfully')
+  $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
