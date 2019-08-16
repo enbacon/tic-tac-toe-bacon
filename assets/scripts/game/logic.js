@@ -2,36 +2,42 @@
 
 const store = require('../store')
 
+const switchPlayer = function () {
+  if (store.player === 'X') {
+    store.player = 'O'
+  } else {
+    store.player = 'X'
+  }
+}
+
 const checkForWin = function () {
-  let winStatus = false
-  console.log('store.game.cells is', store.game.cells)
-  console.log('store.game.cells[3]', store.game.cells[3])
+  console.log('checkforwin', store.game)
   if (store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2] && store.game.cells[0]) {
-    winStatus = true
+    store.game.over = true
+    console.log('top row')
   } else if (store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5] && store.game.cells[3]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[6] === store.game.cells[7] && store.game.cells[6] === store.game.cells[8] && store.game.cells[6]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[0] === store.game.cells[3] && store.game.cells[0] === store.game.cells[6] && store.game.cells[0]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[1] === store.game.cells[4] && store.game.cells[1] === store.game.cells[7] && store.game.cells[1]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[2] === store.game.cells[5] && store.game.cells[2] === store.game.cells[8] && store.game.cells[2]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[0] === store.game.cells[4] && store.game.cells[0] === store.game.cells[8] && store.game.cells[0]) {
-    winStatus = true
+    store.game.over = true
   } else if (store.game.cells[2] === store.game.cells[4] && store.game.cells[2] === store.game.cells[6] && store.game.cells[2]) {
-    winStatus = true
+    store.game.over = true
   } else if (!store.game.cells.includes('')) {
     console.log('draw')
-  } else {
-    if (store.game.cells.includes('')) {
-      console.log('game still in play')
-    }
-    store.winStatus = winStatus
-    console.log(winStatus)
+  } else if (store.game.cells.includes('')) {
+    console.log('game still in play')
+    switchPlayer()
   }
-  return winStatus
+  console.log('game over?', store.game.over)
+
+  return store.game.over
 }
 
 module.exports = {
