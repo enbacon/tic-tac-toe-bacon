@@ -17,7 +17,9 @@ const onGameUpdate = function (event) {
   event.preventDefault()
   store.tile = $(event.target).attr('id')
   const boxText = $(event.target).text()
-
+  if (boxText && !store.game.over === true) {
+    ui.invalidMove()
+  } else
   if (!boxText && !store.game.over === true) {
     $(event.target).text(store.player)
     store.game.cells[store.tile] = store.player

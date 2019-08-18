@@ -14,6 +14,10 @@ const setSuccess = function (text) {
   $('#message').text(text)
 }
 
+const invalidMove = function () {
+  setFailure('Sorry, that is not a valid move. Please pick an empty space!')
+}
+
 const turnNotify = function () {
   if (logic.checkForWin() || logic.checkForDraw()) {
     return
@@ -61,5 +65,6 @@ module.exports = {
   onSeeAllGamesSuccess,
   onSeeAllGamesFailure,
   setSuccess,
-  setFailure
+  setFailure,
+  invalidMove
 }
