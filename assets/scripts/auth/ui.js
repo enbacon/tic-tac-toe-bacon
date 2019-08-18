@@ -74,6 +74,9 @@ const signOutSuccess = function () {
   $('#sign-up').show()
   $('#sign-out').hide()
   $('.container').hide()
+  $('#new-game').hide()
+  $('numGames').hide()
+
   console.log('Signed out successfully')
   $('form').trigger('reset')
 }

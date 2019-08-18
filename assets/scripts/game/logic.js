@@ -33,13 +33,22 @@ const checkForWin = function () {
     console.log('draw')
   } else if (store.game.cells.includes('')) {
     console.log('game still in play')
-    switchPlayer()
   }
   console.log('game over?', store.game.over)
 
   return store.game.over
 }
 
+store.player = 'X'
+console.log(store.player)
+
+const clearBoard = function () {
+  $('.tiles').text('')
+  store.player = 'X'
+}
+
 module.exports = {
-  checkForWin
+  checkForWin,
+  clearBoard,
+  switchPlayer
 }

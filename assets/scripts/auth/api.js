@@ -40,16 +40,9 @@ const signOut = function () {
   })
 }
 
-// const onClick = function {
-//   return $.ajax({
-//   //url: config.apiUrl
-//   })
-// }
-
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut
-//  onClick
 }

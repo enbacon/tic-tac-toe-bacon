@@ -5,17 +5,9 @@ const ui = require('./ui')
 const store = require('../store')
 const logic = require('./logic')
 
-store.player = 'X'
-console.log(store.player)
-
-const clearBoard = function () {
-  $('.tiles').text('')
-  store.player = 'X'
-}
-
 const onNewGame = function (event) {
   event.preventDefault()
-  clearBoard()
+  logic.clearBoard()
   console.log('new game started')
   api.newGame()
     .then(ui.newGameSuccess)
@@ -31,16 +23,16 @@ const onGameUpdate = function (event) {
   if (!boxText && !store.game.over === true) {
     $(event.target).text(store.player)
     store.game.cells[store.tile] = store.player
-    store.game.over = logic.checkForWin()
+    logic.checkForWin()
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
-      // .then(() => switchPlayer())
+      .then(() => logic.switchPlayer())
       .catch(ui.onGameUpdateFailure)
     console.log(store.game.id)
-  } else if (!boxText === '' && store.game.over === true) {
-    $('#message').text('You have tied, Play again!')
-  } else if (boxText !== '' && store.game.over === false) {
-    $('#message').text('Sorry, that is not a valid move!')
+  // } else if (!boxText === '' && store.game.over === true) {
+  //   $('#message').text('You have tied, Play again!')
+  // } else if (boxText !== '' && store.game.over === false) {
+  //   $('#message').text('Sorry, that is not a valid move!')
   }
 }
 const onSeeAllGames = function (event) {

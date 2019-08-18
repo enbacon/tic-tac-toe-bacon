@@ -27,7 +27,8 @@ const onGameUpdateSuccess = function (data) {
   console.log(store.game.cells)
   if (store.game.over === true) {
     $('#message').text('Congratulations ' + store.player + ' you have won!!!')
-  } else {
+  } else if (!store.game.cells.includes('')) {
+    console.log('draw')
     $('#message').text('Player ' + store.player + ' it is now your turn!')
   }
   $('#message').addClass('success')
