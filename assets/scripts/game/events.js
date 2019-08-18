@@ -23,7 +23,7 @@ const onGameUpdate = function (event) {
   if (!boxText && !store.game.over === true) {
     $(event.target).text(store.player)
     store.game.cells[store.tile] = store.player
-    logic.checkForWin()
+    store.game.over = logic.checkForWin()
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
       .then(() => logic.switchPlayer())
