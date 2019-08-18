@@ -2,11 +2,23 @@
 const store = require('../store')
 const logic = require('./logic')
 
+const setFailure = function (text) {
+  $('#message').removeClass('success')
+  $('#message').addClass('failure')
+  $('#message').text(text)
+}
+
+const setSuccess = function (text) {
+  $('#message').removeClass('failure')
+  $('#message').addClass('success')
+  $('#message').text(text)
+}
+
 const turnNotify = function () {
   if (logic.checkForWin() || logic.checkForDraw()) {
     return
   }
-  $('#message').text('Player ' + store.player + ', it is your turn!')
+  setSuccess('Player ' + store.player + ', it is your turn!')
   console.log('turnNotify ran')
 }
 
@@ -15,29 +27,23 @@ const newGameSuccess = function (data) {
   store.game = data.game
   // console.log('store.game is', store.game)
   $('.container').show()
-  $('#message').text('You have started a new game! Player X it is your turn!')
-  $('#message').addClass('success')
-  console.log('newGame started!')
+  setSuccess('You have started a new game! Player X it is your turn!')
 }
 
 const newGameFailure = function () {
-  $('#message').text('Sorry, unable to start a new game.')
-  $('#message').addClass('failure')
-  console.log('newGame not started')
+  setFailure('Sorry, unable to start a new game.')
 }
 
 const onGameUpdateSuccess = function (data) {
   if (logic.checkForWin() === true) {
-    $('#message').text('Congratulations ' + store.player + ' you have won!!!')
+    setSuccess('Congratulations ' + store.player + ' you have won!!!')
   } else if (logic.checkForDraw() === true) {
-    $('#message').text('You have tied. Try playing again!')
+    setFailure('You have tied. Try playing again!')
   }
-  $('#message').addClass('success')
 }
 
 const onGameUpdateFailure = function () {
-  $('#message').text('Sorry, something went wrong, please try again.')
-  $('#message').addClass('failure')
+  setFailure('Sorry, something went wrong, please try again.')
 }
 
 const onSeeAllGamesSuccess = function (data) {
