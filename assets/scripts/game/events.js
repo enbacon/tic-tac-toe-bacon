@@ -17,7 +17,7 @@ const onGameUpdate = function (event) {
   event.preventDefault()
   store.tile = $(event.target).attr('id')
   const boxText = $(event.target).text()
-  if (boxText && (logic.checkforDraw === true || store.game.over === true)) {
+  if (boxText && !store.game.over && !logic.checkForDraw()) {
     ui.invalidMove()
   } else
   if (!boxText && !store.game.over === true) {
