@@ -3,6 +3,9 @@ const store = require('../store')
 const logic = require('./logic')
 
 const turnNotify = function () {
+  if (logic.checkForWin() || logic.checkForDraw()) {
+    return
+  }
   $('#message').text('Player ' + store.player + ', it is your turn!')
   console.log('turnNotify ran')
 }
@@ -28,8 +31,6 @@ const onGameUpdateSuccess = function (data) {
     $('#message').text('Congratulations ' + store.player + ' you have won!!!')
   } else if (logic.checkForDraw() === true) {
     $('#message').text('You have tied. Try playing again!')
-  } else {
-    $('#message').text('Player ' + store.player + ' it is now your turn!')
   }
   $('#message').addClass('success')
 }

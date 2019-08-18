@@ -27,6 +27,7 @@ const onGameUpdate = function (event) {
     api.gameUpdate()
       .then(ui.onGameUpdateSuccess)
       .then(() => logic.switchPlayer())
+      .then(ui.turnNotify)
       .catch(ui.onGameUpdateFailure)
     console.log(store.game.id)
   // } else if (!boxText === '' && store.game.over === true) {
