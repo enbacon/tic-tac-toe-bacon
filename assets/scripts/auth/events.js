@@ -7,10 +7,8 @@ const ui = require('./ui')
 // event handler for sign-up form
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('submitted sign-up!')
   // get form data
   const data = getFormFields(event.target)
-  console.log('sign up data is', data)
   // make the api call
   api.signUp(data)
   // handle success
@@ -21,10 +19,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in attempted')
-
   const data = getFormFields(event.target)
-  console.log('sign in data is', data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -40,7 +35,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out successful')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)

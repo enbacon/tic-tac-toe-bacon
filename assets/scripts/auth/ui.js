@@ -1,33 +1,24 @@
 'use strict'
-const store = require('./../store')
+const store = require('../store')
+const gameUI = require('../game/ui')
 // const play = require('./../game/playing')
 
 // does this need anything passed in?/ as a parameter
 const signUpSuccess = function () {
   // store.token = data.user.token
-  $('#message').text('Signed up successfully!')
-  $('#message').removeClass()
-  // $('#message').className('success') // better?
-  $('#message').addClass('success') // optional: adds css class for styling
-  console.log('singUpSuccess ran')
+  gameUI.setSuccess('Signed up successfully!')
   $('#sign-up').hide()
   $('form').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#message').text('Sign up was not successful.')
-  $('#message').addClass('failure') // optional: adds css class for styling
-  console.log('signUpFailure ran')
+  gameUI.setFailure('Sign up was not successful.')
 }
 
 const signInSuccess = function (data) {
   // store.user.token is how you get the user out of here
   store.user = data.user
-  $('#message').text('Signed in successfully!')
-  $('#message').removeClass()
-  // $('#message').className('success') // better?
-  $('#message').addClass('success') // optional: adds css class for styling
-  console.log('Successful sign in! User is ', store.user)
+  gameUI.setSuccess('Signed in successfully!')
   $('#signed-in-user').text('User ' + store.user.email + ' is signed in!')
   $('#change-password').show()
   $('#sign-up').hide()
@@ -40,22 +31,15 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#message').text('Sign in was not successful.')
-  $('#message').addClass('failure') // optional: adds css class for styling
-  console.log('signInFailure ran')
+  gameUI.setFailure('Sign in was not successful.')
 }
 const changePasswordSuccess = function () {
-  $('#message').text('Password changed successfully!')
-  $('#message').removeClass()
-  $('#message').addClass('success') // optional: adds css class for styling
-  console.log('changePasswordSuccess ran')
+  gameUI.setSuccess('Password changed successfully!')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Password was not changed succesfully.')
-  $('#message').addClass('failure') // optional: adds css class for styling
-  console.log('changePasswordFailure ran')
+  gameUI.setFailure('Password was not changed succesfully.')
 }
 
 const signOutSuccess = function () {
@@ -65,10 +49,7 @@ const signOutSuccess = function () {
   // could also set to store.user = null
   store.user = {}
   $('#signed-in-user').text('')
-  $('#message').text('Signed out successfully!')
-  $('#message').removeClass()
-  // $('#message').className('success') // better?
-  $('#message').addClass('success') // optional: adds css class for styling
+  gameUI.setSuccess('Signed out successfully!')
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up').show()
@@ -76,15 +57,11 @@ const signOutSuccess = function () {
   $('.container').hide()
   $('#new-game').hide()
   $('numGames').hide()
-
-  console.log('Signed out successfully')
   $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
-  $('#message').text('Sign out was not successful.')
-  $('#message').addClass('failure') // optional: adds css class for styling
-  console.log('signOutFailure ran')
+  gameUI.setFailure('Sign out was not successful.')
 }
 
 module.exports = {

@@ -11,7 +11,6 @@ const switchPlayer = function () {
 }
 
 const checkForWin = function () {
-  console.log('checkforwin', store.game)
   if (store.game.cells[0] === store.game.cells[1] && store.game.cells[0] === store.game.cells[2] && store.game.cells[0]) {
     return true
   } else if (store.game.cells[3] === store.game.cells[4] && store.game.cells[3] === store.game.cells[5] && store.game.cells[3]) {
@@ -39,8 +38,6 @@ const checkForDraw = function () {
 }
 
 store.player = 'X'
-console.log(store.player)
-
 const clearBoard = function () {
   $('.tiles').text('')
   store.player = 'X'

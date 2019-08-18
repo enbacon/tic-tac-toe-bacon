@@ -2,9 +2,6 @@
 const store = require('../../assets/scripts/store')
 
 store.player = 'X'
-console.log(store.game.cells)
-
-console.log(store.player)
 
 const switchPlayer = function () {
   if (store.player === 'X') {
@@ -12,14 +9,12 @@ const switchPlayer = function () {
   } else {
     store.player = 'X'
   }
-  console.log(store.player)
 }
 
 const clearBoard = function () {
   if (!store.target === '') {
     store.target = ''
   }
-  console.log('empty?')
 }
 
 module.exports = {

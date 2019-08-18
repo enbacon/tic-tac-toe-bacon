@@ -19,13 +19,11 @@ const turnNotify = function () {
     return
   }
   setSuccess('Player ' + store.player + ', it is your turn!')
-  console.log('turnNotify ran')
 }
 
 const newGameSuccess = function (data) {
   // // store.game provides the ENTIRE OBJECT for the new game
   store.game = data.game
-  // console.log('store.game is', store.game)
   $('.container').show()
   setSuccess('You have started a new game! Player X it is your turn!')
 }
@@ -48,11 +46,10 @@ const onGameUpdateFailure = function () {
 
 const onSeeAllGamesSuccess = function (data) {
   $('#gamesMessage').text(data.games.length)
-  console.log(data.games.length)
 }
 
-const onSeeAllGamesFailure = function (error) {
-  console.log(error)
+const onSeeAllGamesFailure = function () {
+  setFailure('Sorry, can not see game count')
 }
 
 module.exports = {
@@ -62,5 +59,7 @@ module.exports = {
   onGameUpdateSuccess,
   onGameUpdateFailure,
   onSeeAllGamesSuccess,
-  onSeeAllGamesFailure
+  onSeeAllGamesFailure,
+  setSuccess,
+  setFailure
 }
