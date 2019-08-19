@@ -19,31 +19,107 @@
           <div id="message"></div>
         </div>
 
-      <form id="sign-up" class="border">
-        <fieldset>
+
+    <div class="sign-up-container">
+      <div id="credentials" class="col-sm-8 col-md-6 col-lg-4 text-center controls pt-2">
+        <p>Sign In to Play!</p>
+            <form id="sign-up" class="border">
+              <h2>sign up</h2>
+              <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email (fake please)">
+              <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
+              <input type="password" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
+              <button type="submit" class="btn btn-primary btn-block">Sign Up!</button>
+            </form>
+              <p>
+                <small>
+                  already signed up?
+                  <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#signInModal">
+                    sign in
+                  </button>
+                </small>
+              </p>
+            </div>
+          </div>
+
+
+
+          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="sign-in-modal-label">Sign In!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in" class="border">
+                      <input class="form-control mb-2" type="text" name="credentials[email]" placeholder="Email">
+                      <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+                      <input class="btn btn-info" type="submit"  value="Sign in!">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="change-password-modal-label">change password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in" class="border">
+                    <input class="form-control mb-2" type="text" name="credentials[email]" placeholder="Email">
+                    <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+                    <input class="btn btn-info" type="submit"  value="Sign in!">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- <form id="sign-up" class="border">
+          <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[email]" placeholder="Fake Email!!!">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit"  value="Sign up!">
         </fieldset>
-      </form>
+      </form> -->
 
-      <form id="sign-in" class="border">
-        <fieldset>
-          <legend>Sign In!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit"  value="Sign in!">
-        </fieldset>
-      </form>
+          <!-- <div class="sign-in-container">
+            <div id="sign-in" class="col-sm-4 text-center controls pt-2">
+                  <form id="sign-up" class="border">
+                    <h2>sign in</h2>
+                    <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email">
+                    <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
+                    <button type="submit" class="btn btn-primary btn-block" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Sign In!</button>
+                  </form> -->
 
-      <form id="new-game" class="border">
+
+
+
+
+
+
+
+      <!-- <form id="new-game" class="border">
         <fieldset>
           <legend>New Game!</legend>
           <input type="submit" value="Start New Game!">
         </fieldset>
-      </form>
+      </form> -->
 
       <div class="container">
         <h1 class="header">Game Board</h1>
@@ -61,13 +137,13 @@
             </div>
         </div>
       </div>
-<div id="numGames" class="border">
+<!-- <div id="numGames" class="border">
   <fieldset>
     <legend>Click to see how many games you have played!</legend>
     <button class="clickMe">Click!</button>
-    <div id="gamesMessage"></div>
-  </fieldset>
-</div>
+    <! <div id="gamesMessage"></div> -->
+  <!-- </fieldset> -->
+<!-- </div> -->
 
       <form id="change-password" class="border">
         <fieldset>
@@ -77,16 +153,18 @@
           <input type="submit" value="Change password!">
         </fieldset>
       </form>
-      <form id="sign-out" class="border">
+      <!-- <form id="sign-out" class="border">
         <fieldset>
           <legend>Sign out!</legend>
           <input type="submit"  value="Sign out!">
         </fieldset>
-      </form>
+      </form> -->
 
  <!-- NAV BAR CODE -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+
+ <footer>
+      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">created by erin bacon</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -94,32 +172,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a id="new-game" class="nav-link align-middle btn btn-primary" href="#">New Game<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                User Settings
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">See Total Games Played</a>
-                <a class="dropdown-item" href="#">Change Password</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+              <div id="numGames">
+                  <button class="clickMe btn btn-info">click to see games played!</button>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <div id="gamesMessage" class="nav-link "></div>
+            </li>
+            <li class="nav-item">
+              <a id="sign-out" class="nav-link align-middle btn btn-secondary" href="#">Sign Out<span class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
-
+</footer>
     </body>
 </html>

@@ -4,20 +4,27 @@
 $black: #000;
 
 body {
-   background: linear-gradient(rgba(0,0,0,0.25), rgba(0, 0, 0, 0.25)), url('https://images.all-free-download.com/images/graphiclarge/blue_bokeh_background_266395.jpg');
-   background-size: cover;
-   background-position: center;
-   display: grid;
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0, 0, 0, 0.25)), url('https://images.all-free-download.com/images/graphiclarge/blue_bokeh_background_266395.jpg');
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: grid;
+  padding-bottom: 5rem;
 }
 
 .border {
   border: 3px solid $black;
-  margin: 2vw;
-  padding: 2vw;
+  justify-content: center;
+  margin: 1vw;
+  padding: 1vw;
 }
 
 .box {
   border: 1px solid;
+}
+
+.btn {
+  padding: .75vw;
 }
 
 .container {
@@ -26,20 +33,17 @@ body {
   justify-content: center;
 }
 
+.col-sm-4 text-center controls pt-2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .game-board {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Courgette', cursive;
-  color: white;
-  font-size: 5em;
-  font-weight: 850;
-  padding: 2vw;
-}
 
 .fail {
   border: 3px solid red;
@@ -53,6 +57,23 @@ fieldset {
   text-align: center;
 }
 
+
+
+h1 {
+  color: white;
+  font-family: 'Courgette', cursive;
+  font-size: 6em;
+  font-weight: 850;
+  margin: 0 auto;
+  padding: 2vw;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
 .header {
   margin: 2vw;
   padding: 2vw;
@@ -62,10 +83,39 @@ fieldset {
   display: none;
 }
 
+.modal-header {
+  background-color: #2193b0;
+}
+
+.navbar {
+  background-color: #2193b0;
+}
+
+.sign-up-container input {
+  font-size: 1em;
+  padding: 1.5em;
+}
+
+p {
+  font-size: 3em;
+  margin: .1vw;
+  padding: .25vw;
+}
+
 .row {
   height: 30em;
   text-align: center;
   width: 30em;
+}
+
+.sign-up-container {
+  display: flex;
+  justify-content: center;
+}
+
+small {
+  font-size: .5em;
+  line-height: 15px;
 }
 
 .status-messages {

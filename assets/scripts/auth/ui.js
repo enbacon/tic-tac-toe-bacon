@@ -22,12 +22,13 @@ const signInSuccess = function (data) {
   $('#signed-in-user').text('User ' + store.user.email + ' is signed in!')
   $('#change-password').show()
   $('#sign-up').hide()
-  $('#sign-in').hide()
+  $('#sign-in-modal').modal('hide')
   $('#new-game').show()
   $('#sign-out').show()
   $('#numGames').show()
   $('#hide').css('display', 'block')
   $('form').trigger('reset')
+  $('#credentials').hide()
 }
 
 const signInFailure = function () {

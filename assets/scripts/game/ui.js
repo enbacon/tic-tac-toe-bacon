@@ -28,7 +28,8 @@ const turnNotify = function () {
 const newGameSuccess = function (data) {
   // // store.game provides the ENTIRE OBJECT for the new game
   store.game = data.game
-  $('.container').show()
+  // $('.container').show()
+  $('#sign-in').show()
   setSuccess('You have started a new game! Player X it is your turn!')
 }
 
