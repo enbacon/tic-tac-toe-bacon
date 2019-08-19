@@ -16,7 +16,7 @@
         <div class="status-messages">
           <div id="signed-in-user"></div>
           <div id="signed-out-user"></div>
-          <div id="message"></div>
+          <div id="message" class="col-sm-10 col-lg-8 text-center"></div>
         </div>
 
 
@@ -65,28 +65,6 @@
             </div>
           </div>
 
-          <!-- Button trigger modal -->
-          <!-- Modal -->
-          <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="change-password-modal-label">change password</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-in" class="border">
-                    <input class="form-control mb-2" type="text" name="credentials[email]" placeholder="Email">
-                    <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
-                    <input class="btn btn-info" type="submit"  value="Sign in!">
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- <div class="sign-in-container">
             <div id="sign-in" class="col-sm-4 text-center controls pt-2">
                   <form id="sign-up" class="border">
@@ -119,22 +97,16 @@
             </div>
         </div>
       </div>
-<!-- <div id="numGames" class="border">
-  <fieldset>
-    <legend>Click to see how many games you have played!</legend>
-    <button class="clickMe">Click!</button>
-    <! <div id="gamesMessage"></div> -->
-  <!-- </fieldset> -->
-<!-- </div> -->
 
-      <form id="change-password" class="border">
+      <!-- <form id="change-password" class="border">
         <fieldset>
           <legend>Change Password!</legend>
           <input type="password" name="passwords[old]" placeholder="Current password">
           <input type="password" name="passwords[new]" placeholder="New password">
           <input type="submit" value="Change password!">
         </fieldset>
-      </form>
+      </form> -->
+
       <!-- <form id="sign-out" class="border">
         <fieldset>
           <legend>Sign out!</legend>
@@ -154,22 +126,47 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a id="new-game" class="nav-link align-middle btn btn-primary" href="#">New Game<span class="sr-only">(current)</span></a>
+              <a id="new-game" class="nav-link btn-lg align-middle btn btn-primary new-game" href="#">New Game<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <div id="numGames">
-                  <button class="clickMe btn btn-info">click to see games played!</button>
+                  <button class="clickMe btn btn-info">Click To See Games Played!</button>
               </div>
             </li>
             <li class="nav-item">
-              <div id="gamesMessage" class="nav-link "></div>
+              <div id="games-message" class="nav-link"></div>
+            </li>
+            <li class="nav-item active">
+              <a id="change-password-button" class="nav-link align-middle btn btn-secondary" data-toggle="modal" data-target="#change-password-modal" href="#">Change Password<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a id="sign-out" class="nav-link align-middle btn btn-secondary" href="#">Sign Out<span class="sr-only">(current)</span></a>
+              <a id="sign-out" class="nav-link align-middle btn-sm btn-secondary" href="#">Sign Out<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
       </nav>
 </footer>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="change-password-modal-label">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="change-password" class="border">
+          <input class="form-control mb-2" type="password" name="passwords[old]" placeholder="Current password">
+          <input class="form-control mb-2" type="password" name="passwords[new]" placeholder="New password">
+          <input class="btn btn-info" type="submit"  value="Change Password!">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 </html>

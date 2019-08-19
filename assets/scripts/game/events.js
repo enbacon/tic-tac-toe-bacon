@@ -33,7 +33,7 @@ const onGameUpdate = function (event) {
 }
 const onSeeAllGames = function (event) {
   event.preventDefault()
-  $('#gamesMessage').show()
+  $('#games-message').show()
   api.seeAllGames()
     .then(ui.onSeeAllGamesSuccess)
     .catch(ui.onSeeAllGamesFailure)

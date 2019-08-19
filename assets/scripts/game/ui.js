@@ -28,7 +28,7 @@ const turnNotify = function () {
 const newGameSuccess = function (data) {
   // // store.game provides the ENTIRE OBJECT for the new game
   store.game = data.game
-  // $('.container').show()
+  $('.container').show()
   $('#sign-in').show()
   setSuccess('You have started a new game! Player X it is your turn!')
 }
@@ -50,7 +50,8 @@ const onGameUpdateFailure = function () {
 }
 
 const onSeeAllGamesSuccess = function (data) {
-  $('#gamesMessage').text(data.games.length)
+  $('#games-message').show()
+  $('#games-message').text(data.games.length)
 }
 
 const onSeeAllGamesFailure = function () {

@@ -42,22 +42,21 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 3em;
 }
 
 
 .fail {
-  border: 3px solid red;
+  border: 5px solid red;
 }
 
 .failure {
-  border: 3px solid red;
+  border: 5px solid red;
 }
 
 fieldset {
   text-align: center;
 }
-
-
 
 h1 {
   color: white;
@@ -65,22 +64,28 @@ h1 {
   font-size: 6em;
   font-weight: 850;
   margin: 0 auto;
-  padding: 2vw;
   text-align: center;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
 }
 
-.header {
-  margin: 2vw;
-  padding: 2vw;
-}
+// .header {
+//   margin: 2vw;
+//   padding: 2vw;
+// }
 
-#hide {
-  display: none;
+// #hide {
+//   display: none;
+// }
+
+.nav-item {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 .modal-header {
@@ -91,11 +96,6 @@ h2 {
   background-color: #2193b0;
 }
 
-.sign-up-container input {
-  font-size: 1em;
-  padding: 1.5em;
-}
-
 p {
   font-size: 3em;
   margin: .1vw;
@@ -103,14 +103,19 @@ p {
 }
 
 .row {
-  height: 30em;
+  height: 40vw;
   text-align: center;
-  width: 30em;
+  width: 40vw;
 }
 
 .sign-up-container {
   display: flex;
   justify-content: center;
+}
+
+.sign-up-container input {
+  font-size: 1em;
+  padding: 1.5em;
 }
 
 small {
@@ -119,11 +124,15 @@ small {
 }
 
 .status-messages {
+  font-size: 1.5em;
+  justify-content: center;
+  // margin: 0 1em;
+  // padding: 0 1em;
   text-align: center;
 }
 
 .success {
-  border: 3px solid green;
+  border: 5px solid green;
 }
 
 .tiles {

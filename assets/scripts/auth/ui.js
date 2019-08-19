@@ -20,12 +20,13 @@ const signInSuccess = function (data) {
   store.user = data.user
   gameUI.setSuccess('Signed in successfully!')
   $('#signed-in-user').text('User ' + store.user.email + ' is signed in!')
-  $('#change-password').show()
+  $('#change-password-button').show()
   $('#sign-up').hide()
   $('#sign-in-modal').modal('hide')
   $('#new-game').show()
   $('#sign-out').show()
   $('#numGames').show()
+  $('.navbar').show()
   $('#hide').css('display', 'block')
   $('form').trigger('reset')
   $('#credentials').hide()
@@ -36,6 +37,7 @@ const signInFailure = function () {
 }
 const changePasswordSuccess = function () {
   gameUI.setSuccess('Password changed successfully!')
+  $('#change-password-modal').modal('hide')
   $('form').trigger('reset')
 }
 
@@ -51,13 +53,14 @@ const signOutSuccess = function () {
   store.user = {}
   $('#signed-in-user').text('')
   gameUI.setSuccess('Signed out successfully!')
-  $('#change-password').hide()
+  $('#change-password-button').hide()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
   $('.container').hide()
   $('#new-game').hide()
-  $('numGames').hide()
+  $('#numGames').hide()
+  $('#games-message').hide()
   $('form').trigger('reset')
 }
 
