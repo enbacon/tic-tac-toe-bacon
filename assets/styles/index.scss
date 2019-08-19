@@ -9,6 +9,7 @@ body {
   background-size: cover;
   color: white;
   display: grid;
+  min-height: 100vh;
   padding-bottom: 5rem;
 }
 
@@ -72,10 +73,9 @@ h2 {
   text-align: center;
 }
 
-// .header {
-//   margin: 2vw;
-//   padding: 2vw;
-// }
+.header {
+  font-size: 2rem;
+}
 
 // #hide {
 //   display: none;
@@ -86,6 +86,10 @@ h2 {
   margin-right: 1em;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.message {
+  margin: 0 auto;
 }
 
 .modal-header {
@@ -103,9 +107,9 @@ p {
 }
 
 .row {
-  height: 40vw;
+  height: 50vmin;
   text-align: center;
-  width: 40vw;
+  width: 50vmin;
 }
 
 .sign-up-container {
@@ -138,5 +142,8 @@ small {
 .tiles {
   align-items: center;
   display: flex;
+  font-family: 'Courgette', cursive;
+  font-size: 10vmin;
+  height: calc(50vmin / 3);
   justify-content: center;
 }
