@@ -1,15 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Courgette&display=swap');
 
 $black: #000;
 
 body {
-  display: grid;
+   background: linear-gradient(rgba(0,0,0,0.25), rgba(0, 0, 0, 0.25)), url('https://images.all-free-download.com/images/graphiclarge/blue_bokeh_background_266395.jpg');
+   background-size: cover;
+   background-position: center;
+   display: grid;
 }
 
 .border {
   border: 3px solid $black;
-  margin: 20px;
-  padding: 20px;
+  margin: 2vw;
+  padding: 2vw;
 }
 
 .box {
@@ -30,6 +34,11 @@ body {
 
 h1 {
   text-align: center;
+  font-family: 'Courgette', cursive;
+  color: white;
+  font-size: 5em;
+  font-weight: 850;
+  padding: 2vw;
 }
 
 .fail {
@@ -45,8 +54,8 @@ fieldset {
 }
 
 .header {
-  margin: 20px;
-  padding: 20px;
+  margin: 2vw;
+  padding: 2vw;
 }
 
 #hide {
