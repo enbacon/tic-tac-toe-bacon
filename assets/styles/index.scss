@@ -45,8 +45,8 @@ fieldset {
 }
 
 .header {
-  padding: 20px;
   margin: 20px;
+  padding: 20px;
 }
 
 #hide {
@@ -68,7 +68,7 @@ fieldset {
 }
 
 .tiles {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
