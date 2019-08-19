@@ -38,11 +38,12 @@ const signInFailure = function () {
 const changePasswordSuccess = function () {
   gameUI.setSuccess('Password changed successfully!')
   $('#change-password-modal').modal('hide')
+  $('.change-password-alert').text('')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  gameUI.setFailure('Password was not changed succesfully.')
+  $('.change-password-alert').text('Password was not changed succesfully.')
 }
 
 const signOutSuccess = function () {
