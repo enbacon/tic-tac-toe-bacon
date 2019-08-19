@@ -13,6 +13,7 @@ const signUpSuccess = function () {
 
 const signUpFailure = function () {
   gameUI.setFailure('Sign up was not successful.')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
@@ -29,12 +30,13 @@ const signInSuccess = function (data) {
   $('.navbar').show()
   $('#hide').css('display', 'block')
   $('.sign-in-alert').text('')
-  $('form').trigger('reset')
   $('#credentials').hide()
+  $('form').trigger('reset')
 }
 
 const signInFailure = function () {
   $('.sign-in-alert').text('Sign in was not successful')
+  $('form').trigger('reset')
 }
 const changePasswordSuccess = function () {
   gameUI.setSuccess('Password changed successfully!')
@@ -45,6 +47,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function () {
   $('.change-password-alert').text('Password was not changed succesfully.')
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function () {
@@ -63,13 +66,14 @@ const signOutSuccess = function () {
   $('#new-game').hide()
   $('#numGames').hide()
   $('#games-message').hide()
-  $('form').trigger('reset')
   $('.navbar').hide()
   $('#credentials').show()
+  $('form').trigger('reset')
 }
 
 const signOutFailure = function () {
   gameUI.setFailure('Sign out was not successful.')
+  $('form').trigger('reset')
 }
 
 module.exports = {

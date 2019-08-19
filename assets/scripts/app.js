@@ -21,4 +21,9 @@ $(() => {
   $('.box').on('click', gameEvents.onGameUpdate)
   $('.clickMe').on('click', gameEvents.onSeeAllGames)
   $('.navbar').hide()
+  $('.modal').on('hidden.bs.modal', function () {
+    $('form').trigger('reset')
+    $('.sign-in-alert').text('')
+    $('.change-password-alert').text('')
+  })
 })
