@@ -28,12 +28,13 @@ const signInSuccess = function (data) {
   $('#numGames').show()
   $('.navbar').show()
   $('#hide').css('display', 'block')
+  $('.sign-in-alert').text('')
   $('form').trigger('reset')
   $('#credentials').hide()
 }
 
 const signInFailure = function () {
-  gameUI.setFailure('Sign in was not successful.')
+  $('.sign-in-alert').text('Sign in was not successful')
 }
 const changePasswordSuccess = function () {
   gameUI.setSuccess('Password changed successfully!')
@@ -63,6 +64,8 @@ const signOutSuccess = function () {
   $('#numGames').hide()
   $('#games-message').hide()
   $('form').trigger('reset')
+  $('.navbar').hide()
+  $('#credentials').show()
 }
 
 const signOutFailure = function () {
