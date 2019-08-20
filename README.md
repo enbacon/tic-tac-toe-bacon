@@ -42,19 +42,19 @@
 
 ## User Stories:
 
-- `As a user,` I want to sign up for an account.
-- `As a user,` I want to login to my account.
-- `As a user,` I want start a new game when I am logged in to my account.
-- `As a user,` I want to know whether player 'X' or player 'O' will make the next move.
-- `As a user,` I want to know if I cannot place a mark in a speciffic spot during the game.
-- `As a user,` I want to know if someone has won.
-- `As a user,` I want to know who won.
-- `As a user,` I want to know if there is a draw.
-- `As a user,` I want to not be able to clutter up the board with extra marks after the end of a game.
-- `As a user,` I want to know how many games I have played.
-- `As a user,` I want to be able to change my password.
-- `As a user,` I want to be able to log out of my account.
-- `As a user,` I want to know my logout was successful
+- As a user, I want to sign up for an account.
+- As a user, I want to login to my account.
+- As a user, I want start a new game when I am logged in to my account.
+- As a user, I want to know whether player 'X' or player 'O' will make the next move.
+- As a user, I want to know if I cannot place a mark in a speciffic spot during the game.
+- As a user, I want to know if someone has won.
+- As a user, I want to know who won.
+- As a user, I want to know if there is a draw.
+- As a user, I want to not be able to clutter up the board with extra marks after the end of a game.
+- As a user, I want to know how many games I have played.
+- As a user, I want to be able to change my password.
+- As a user, I want to be able to log out of my account.
+- As a user, I want to know my logout was successful
 
 ##
 
