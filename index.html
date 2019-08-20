@@ -27,7 +27,7 @@
               <h2>sign up</h2>
               <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email (fake please)">
               <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
-              <input type="password" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
               <button type="submit" class="btn btn-primary btn-block">Sign Up!</button>
             </form>
               <p>
@@ -127,8 +127,8 @@
       <div class="modal-body">
         <form id="change-password" class="border">
           <div class="change-password-alert"></div>
-          <input class="change-pw form-control mb-2" type="password" name="passwords[old]" placeholder="Current password">
-          <input class="change-pw form-control mb-2" type="password" name="passwords[new]" placeholder="New password">
+          <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
+          <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
           <input class="btn btn-info" type="submit"  value="Change Password!">
         </form>
       </div>
