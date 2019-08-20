@@ -55,3 +55,7 @@
 - `As a user,` I want to be able to change my password.
 - `As a user,` I want to be able to log out of my account.
 - `As a user,` I want to know my logout was successful
+
+##
+
+-`Wireframes for this project may be found at https://imgur.com/a/NxWg7Uq`
