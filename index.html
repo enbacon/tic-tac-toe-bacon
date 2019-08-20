@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Welcome to Tic Tac Toe!!!</h1>
+        <div class="status-messages">
+          <div id="signed-in-user"></div>
+          <div id="signed-out-user"></div>
+          <div id="message" class="message col-sm-10 col-lg-8 text-center"></div>
+        </div>
+
+
+    <div class="sign-up-container">
+      <div id="credentials" class="col-sm-8 col-md-6 col-lg-4 text-center controls pt-2">
+        <p>Sign In to Play!</p>
+            <form id="sign-up" class="border">
+              <h2>sign up</h2>
+              <input type="email" autocomplete="off" class="form-control mb-1" name="credentials[email]" placeholder="email (fake please)">
+              <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password]" placeholder="password">
+              <input type="password" autocomplete="off" class="form-control mb-1" name="credentials[password_confirmation]" placeholder="confirm password">
+              <button type="submit" class="btn btn-primary btn-block">Sign Up!</button>
+            </form>
+              <p>
+                <small>
+                  already signed up?
+                  <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#sign-in-modal">
+                    sign in
+                  </button>
+                </small>
+              </p>
+            </div>
+          </div>
+
+          <!-- Button trigger modal -->
+          <!-- Modal -->
+          <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="sign-in-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="sign-in-modal-label">Sign In!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in" class="border">
+                    <div class="sign-in-alert"></div>
+                      <input class="form-control mb-2" type="text" name="credentials[email]" placeholder="Email">
+                      <input class="form-control mb-2" type="password" name="credentials[password]" placeholder="Password">
+                      <input class="btn btn-info" type="submit"  value="Sign in!">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <div class="container">
+        <h1 class="header">Game Board</h1>
+          <div class="game-board">
+            <div class="row">
+              <div id="0" class="tiles col-4 border-top-0 border-left-0 box"></div>
+              <div id="1" class="tiles col-4 border-top-0 box"></div>
+              <div id="2" class="tiles col-4 border-top-0 border-right-0 box"></div>
+              <div id="3" class="tiles col-4 border-left-0 box"></div>
+              <div id="4" class="tiles col-4 box"></div>
+              <div id="5" class="tiles col-4 border-right-0 box"></div>
+              <div id="6" class="tiles col-4 border-bottom-0 border-left-0 box"></div>
+              <div id="7" class="tiles col-4 border-bottom-0 box"></div>
+              <div id="8" class="tiles col-4 border-bottom-0 border-right-0 box"></div>
+            </div>
+        </div>
+      </div>
+
+ <!-- NAV BAR CODE -->
+ <footer>
+      <nav class="navbar fixed-bottom navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">created by erin n. bacon</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav d-flex align-items-center mr-auto">
+            <li class="nav-item active">
+              <a id="new-game" class="nav-link btn-lg align-middle btn btn-primary new-game" href="#">New Game<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <div id="numGames">
+                  <button class="clickMe btn btn-sm btn-info">Click To See Games Played!</button>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div id="games-message" class="nav-link"></div>
+            </li>
+            <li class="nav-item">
+              <a id="change-password-button" class="nav-link align-middle btn btn-sm btn-secondary" data-toggle="modal" data-target="#change-password-modal" href="#">Change Password<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a id="sign-out" class="nav-link align-middle btn btn-sm btn-secondary" href="#">Sign Out<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</footer>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="change-password-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="change-password-modal-label">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="change-password" class="border">
+          <div class="change-password-alert"></div>
+          <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[old]" placeholder="Current password">
+          <input class="change-pw form-control mb-2" type="password" autocomplete="off" name="passwords[new]" placeholder="New password">
+          <input class="btn btn-info" type="submit"  value="Change Password!">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+</html>
