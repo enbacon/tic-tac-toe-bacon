@@ -2,15 +2,46 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Courgette&display=swap');
 
 $black: #000;
+$primary: #2193b0;
+$secondary: #fff;
 
 body {
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0, 0, 0, 0.25)), url('https://images.all-free-download.com/images/graphiclarge/blue_bokeh_background_266395.jpg');
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)), url('https://images.all-free-download.com/images/graphiclarge/blue_bokeh_background_266395.jpg');
   background-position: center;
   background-size: cover;
-  color: white;
+  color: $secondary;
   display: grid;
   min-height: 100vh;
   padding-bottom: 5rem;
+}
+
+h1 {
+  color: $secondary;
+  font-family: 'Courgette', cursive;
+  font-size: 6em;
+  font-weight: 850;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+li {
+  min-width: 12.5vw;
+}
+
+p {
+  font-size: 3em;
+  margin: .1vw;
+  padding: .25vw;
+}
+
+small {
+  font-size: .5em;
+  line-height: 15px;
 }
 
 .border {
@@ -43,13 +74,6 @@ body {
   justify-content: center;
   text-align: center;
 }
-.game-board {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 3em;
-}
-
 
 .fail {
   border: 5px solid red;
@@ -59,26 +83,42 @@ body {
   border: 5px solid red;
 }
 
-h1 {
-  color: white;
-  font-family: 'Courgette', cursive;
-  font-size: 6em;
-  font-weight: 850;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.5em;
-  text-align: center;
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3em;
 }
 
 .header {
   font-size: 2rem;
 }
 
-li {
-  min-width: 12.5vw;
+.message {
+  margin: 0 auto;
+}
+
+.modal-body {
+  background-color: $secondary;
+  margin: 1px black solid;
+}
+
+// remove white on upper right side of motal title
+.modal-content {
+  background-color: transparent;
+}
+
+.modal-header {
+  background-color: $primary;
+  color: $secondary
+}
+
+.modal-title {
+  color: $secondary;
+}
+
+.navbar {
+  background-color: $primary;
 }
 
 .nav-item {
@@ -86,24 +126,6 @@ li {
   margin-right: 1em;
   padding-left: 1em;
   padding-right: 1em;
-}
-
-.message {
-  margin: 0 auto;
-}
-
-.modal-header {
-  background-color: #2193b0;
-}
-
-.navbar {
-  background-color: #2193b0;
-}
-
-p {
-  font-size: 3em;
-  margin: .1vw;
-  padding: .25vw;
 }
 
 .row {
@@ -124,11 +146,6 @@ p {
 .sign-up-container input {
   font-size: 1em;
   padding: 1.5em;
-}
-
-small {
-  font-size: .5em;
-  line-height: 15px;
 }
 
 .status-messages {
